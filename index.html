@@ -1,55 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AGC Download</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-  </head>
-  <body>
-    <div class="_header">
-        <h1 class="_boldText _centerText">Mod Injector</h1>
-    </div>
-    <div class="_container">
-      <div class="_leftSidebar">
-          <a href="https://tom-the-debugger.github.io/AGC-download" class="_navBarButton _navBarButton-Selected">Downloads</a>
-          <a href="/AGC-download/versions" class="_navBarButton">Versions</a>
-          <a href="/AGC-download/about" class="_navBarButton">About</a>
-      </div>
-      <div class="_content">
-        <h2 class="_boldText _centerText">AGC Client</h2>
-        <p>Drag the bookmarklet to your bookmarks bar. In the Scratch/Turbowarp project click on the bookmark and wait for the project to load.</p>
-        <br/>
-        <a name="Bookmark" aria-disabled="true" class="_mainLink _dragThisLink" href='javascript:(function()%7B    /* Made by anonynmous-exdash and Com_engineer_Tom. */    let id = "https://tom-the-debugger.github.io/AGC-download/downloads/AGC-Client.sb3";        function getScratchVM() %7B        if (window.location.hostname == "turbowarp.org") %7B        return window.vm;    %7D    const appElement = document.getElementById("app");    if (!appElement) %7B        return null;    %7D    const reactContainerKey = Object.keys(appElement).find(key => key.startsWith("__reactContainer$"));    if (reactContainerKey) %7B        try %7B            const rootFiber = appElement%5BreactContainerKey%5D;            const AppFiber = rootFiber.child;            const store = AppFiber?.pendingProps?.store %7C%7C AppFiber?.memoizedProps?.store;                        if (store) %7B                return store.getState().scratchGui.vm;            %7D        %7D catch (e) %7B            console.warn("%5BINJECTOR%5D: React root container search failed. ", e);        %7D    %7D    if (appElement._reactRootContainer) %7B        try %7B            const store = appElement._reactRootContainer._internalRoot.current.child.pendingProps.store;            return store.getState().scratchGui.vm;        %7D catch (e) %7B            console.warn("%5BINJECTOR%5D: React 17 Legacy path failed:", e);        %7D    %7D    console.error("%5BINJECTOR%5D: Failed to find Scratch%27s VM.");    return null;%7D    if (typeof vm === "undefined") %7B           vm = getScratchVM();    %7D    vm.runtime.canAddCloudVariable = function () %7B return true; %7D;    alert("Injecting AGC into Scratch. Please wait...");    fetch(id)        .then(r => r.arrayBuffer())        .then(buffer => vm.loadProject(buffer))        .then(() => %7B            console.log("Loaded project!");            alert("Loaded project!");        %7D)        .catch(error => %7B            alert("Something went wrong!");            console.log("Error loading project;", error);        %7D);%7D)();'>AGC Client</a>
-        <br/>
-        <p>Here is the raw .sb3 file. It is not any use if you want to use it in the actual game, but you may want to keep this file.</p>
-        <br/>
-        <a class="_mainLink" href="https://tom-the-debugger.github.io/AGC-download/downloads/AGC-Client.sb3">Download AGC Client</a>
-        <br/>
-        <br/>
-        <h2 class="_boldText _centerText">Client X</h2>
-        <p>Bookmarklet</p>
-        <br/>
-        <a name="Bookmark" aria-disabled="true" class="_mainLink _dragThisLink" href='javascript:(function()%7B    /* Made by anonynmous-exdash and Com_engineer_Tom. */    let id = "https://tom-the-debugger.github.io/AGC-download/downloads/ClientX-1.0.sb3";        function getScratchVM() %7B        if (window.location.hostname == "turbowarp.org") %7B        return window.vm;    %7D    const appElement = document.getElementById("app");    if (!appElement) %7B        return null;    %7D    const reactContainerKey = Object.keys(appElement).find(key => key.startsWith("__reactContainer$"));    if (reactContainerKey) %7B        try %7B            const rootFiber = appElement%5BreactContainerKey%5D;            const AppFiber = rootFiber.child;            const store = AppFiber?.pendingProps?.store %7C%7C AppFiber?.memoizedProps?.store;                        if (store) %7B                return store.getState().scratchGui.vm;            %7D        %7D catch (e) %7B            console.warn("%5BINJECTOR%5D: React root container search failed. ", e);        %7D    %7D    if (appElement._reactRootContainer) %7B        try %7B            const store = appElement._reactRootContainer._internalRoot.current.child.pendingProps.store;            return store.getState().scratchGui.vm;        %7D catch (e) %7B            console.warn("%5BINJECTOR%5D: React 17 Legacy path failed:", e);        %7D    %7D    console.error("%5BINJECTOR%5D: Failed to find Scratch%27s VM.");    return null;%7D    if (typeof vm === "undefined") %7B           vm = getScratchVM();    %7D    vm.runtime.canAddCloudVariable = function () %7B return true; %7D;    alert("Injecting Client X into Scratch. Please wait...");    fetch(id)        .then(r => r.arrayBuffer())        .then(buffer => vm.loadProject(buffer))        .then(() => %7B            console.log("Loaded project!");            alert("Loaded project!");        %7D)        .catch(error => %7B            alert("Something went wrong!");            console.log("Error loading project;", error);        %7D);%7D)();'>Client X</a>
-        <br/>
-        <p>Raw file</p>
-        <br/>
-        <a class="_mainLink" href="https://tom-the-debugger.github.io/AGC-download/downloads/ClientX-1.0.sb3">Download Client X</a>
-        <br/>
-        <br/>
-        <h2 class="_boldText _centerText">Shadow Client</h2>
-        <p>Bookmarklet</p>
-        <br/>
-        <a name="Bookmark" aria-disabled="true" class="_mainLink _dragThisLink" href='javascript:(function()%7B    /* Made by anonynmous-exdash and Com_engineer_Tom for directdestroyer1 */    let id = "https://directprogrammer1.github.io/assets/ShadowClient_v1.2.sb3";        function getScratchVM() %7B        if (window.location.hostname == "turbowarp.org") %7B        return window.vm;    %7D    const appElement = document.getElementById("app");    if (!appElement) %7B        return null;    %7D    const reactContainerKey = Object.keys(appElement).find(key => key.startsWith("__reactContainer$"));    if (reactContainerKey) %7B        try %7B            const rootFiber = appElement%5BreactContainerKey%5D;            const AppFiber = rootFiber.child;            const store = AppFiber?.pendingProps?.store %7C%7C AppFiber?.memoizedProps?.store;                        if (store) %7B                return store.getState().scratchGui.vm;            %7D        %7D catch (e) %7B            console.warn("%5BINJECTOR%5D: React root container search failed. ", e);        %7D    %7D    if (appElement._reactRootContainer) %7B        try %7B            const store = appElement._reactRootContainer._internalRoot.current.child.pendingProps.store;            return store.getState().scratchGui.vm;        %7D catch (e) %7B            console.warn("%5BINJECTOR%5D: React 17 Legacy path failed:", e);        %7D    %7D    console.error("%5BINJECTOR%5D: Failed to find Scratch%27s VM.");    return null;%7D    if (typeof vm === "undefined") %7B           vm = getScratchVM();    %7D    vm.runtime.canAddCloudVariable = function () %7B return true; %7D;    alert("Injecting Shadow Client into Scratch. Please wait...");    fetch(id)        .then(r => r.arrayBuffer())        .then(buffer => vm.loadProject(buffer))        .then(() => %7B            console.log("Loaded project!");            alert("Loaded project!");        %7D)        .catch(error => %7B            alert("Something went wrong!");            console.log("Error loading project;", error);        %7D);%7D)();'>Shadow Client</a>
-        <br/>
-        <a class="_mainLink" href="https://tom-the-debugger.github.io/AGC-download/downloads/ClientX-1.0.sb3">Download Client X</a>
-        <br/>
-        <br/>
-        <p class="_centerText _boldText">If you want your project to be listed here, tell me <a class="_inlineLink" href="https://scratch.mit.edu/users/Com_engineer_Tom">here</a> at my profile page.</p>
-      </div>
-    </div>
-    <div class="_footer">
-      <h6>License: MIT</h6>
-    </div>
-  </body>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    </head>
+    <!-- No style.css currently-->
+    <style type="text/css">
+        .header {
+            background-color: midnightblue;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+        }
+        span, h2, h3, h4, h5, h6, p, .text{
+            font-family: Quicksand;
+            color: white
+        }
+        h1 {
+            color: white;
+            margin-right: 30px;
+            padding-bottom: 6px;
+            font-family: Quicksand
+        }
+        .tab {
+            background: midnightblue;
+            transition: 0.3s background ease-in-out;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            margin: 0;
+            align-self: flex-start;
+            height: 100%;
+            padding: 0px 15px 0px 15px;
+        }
+        .tab:hover {
+            background: #29298C;
+        }
+        .container {
+            margin: 10px;
+            margin-left: 20px
+        }
+        .button {
+            background: midnightblue;
+            transition: 0.3s background ease-in-out;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            height: 30px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            width: 50%;
+            cursor: pointer
+        }
+        .button:hover {
+            background: #29298C;
+        }
+    </style>
+    <body style="background-color: #2b2b2b; margin: 0; padding: 0">
+        <div class="header">
+            <h1>RD Hack Clients</h1>
+            <a href="https://directprogrammer1.github.io/HackClients"><li class="text tab"><h2>Downloads</h2></li></a>
+            <a href="/changelog"><li class="text tab"><h2>Changelog</h2></li></a>
+            <a href="/about"><li class="text tab"><h2>About</h2></li></a>
+        </div>
+        <div class="container">
+            <!--Container-->
+            <h2>ShadowClient (v1.3)</h2>
+            <span>This is the bookmarklet for loading the client. Drag it to your bookmarks bar, then, on Scratch or Turbowarp,  click on it and it should display a popup saying something along the lines of "Injecting --- into Scratch". Then, wait for the client to load.</span>
+            <br>
+            <div class="button text">
+                <a href='javascript:(function()%7B    /* Made by anonynmous-exdash, Com_engineer_Tom and directdestroyer1. */    let id = "https://directprogrammer1.github.io/HackClients/assets/ShadowClient/ShadowClient-v1.3.sb3";        function getScratchVM() %7B        if (window.location.hostname == "turbowarp.org") %7B        return window.vm;    %7D    const appElement = document.getElementById("app");    if (!appElement) %7B        return null;    %7D    const reactContainerKey = Object.keys(appElement).find(key => key.startsWith("__reactContainer$"));    if (reactContainerKey) %7B        try %7B            const rootFiber = appElement%5BreactContainerKey%5D;            const AppFiber = rootFiber.child;            const store = AppFiber?.pendingProps?.store %7C%7C AppFiber?.memoizedProps?.store;                        if (store) %7B                return store.getState().scratchGui.vm;            %7D        %7D catch (e) %7B            console.warn("%5BINJECTOR%5D: React root container search failed. ", e);        %7D    %7D    if (appElement._reactRootContainer) %7B        try %7B            const store = appElement._reactRootContainer._internalRoot.current.child.pendingProps.store;            return store.getState().scratchGui.vm;        %7D catch (e) %7B            console.warn("%5BINJECTOR%5D: React 17 Legacy path failed:", e);        %7D    %7D    console.error("%5BINJECTOR%5D: Failed to find Scratch%27s VM.");    return null;%7D    if (typeof vm === "undefined") %7B           vm = getScratchVM();    %7D    vm.runtime.canAddCloudVariable = function () %7B return true; %7D;    alert("Injecting ShadowClient into Scratch. Please wait...");    fetch(id)        .then(r => r.arrayBuffer())        .then(buffer => vm.loadProject(buffer))        .then(() => %7B            console.log("Loaded project!");            alert("Loaded project!");        %7D)        .catch(error => %7B            alert("Something went wrong!");            console.log("Error loading project;", error);        %7D);%7D)();''>ShadowClient injector</a>
+            </div>
+        </div>
+    </body>
 </html>
